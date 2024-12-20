@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Produto</title>
+    <!-- Link para o Bootstrap 5 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link para o Font Awesome (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f9fd; /* Cor de fundo suave */
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 8px;
+        }
+        .form-select {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Registro de Produto</h2>
+        <form>
+            <div class="mb-3">
+                <label for="nomeItem" class="form-label">Nome do Item</label>
+                <input type="text" class="form-control" id="nomeItem" placeholder="Digite o nome do item" required>
+            </div>
+            <div class="mb-3">
+                <label for="quantidade" class="form-label">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade" required>
+            </div>
+            <div class="mb-3">
+                <label for="unidadeMedida" class="form-label">Unidade de Medida</label>
+                <select class="form-select" id="unidadeMedida" required>
+                    <option value="litro">Litro</option>
+                    <option value="unidade">Unidade</option>
+                    <option value="kg">Kilograma</option>
+                    <option value="pacote">Pacote</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="local" class="form-label">Local</label>
+                <input type="text" class="form-control" id="local" placeholder="Digite o local" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block w-100">Registrar</button>
+        </form>
+    </div>
+
+    <!-- Scripts do Bootstrap (para ativar os componentes interativos, como a navbar collapsible) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
