@@ -41,20 +41,50 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="nav-link active" aria-current="page" href="/home">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Cadastro -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registerproduct">
+                            <i class="fas fa-user-plus"></i> Cadastro
+                        </a>
+                    </li>
+                    <!-- Retirada -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/retirada">
+                            <i class="fas fa-arrow-circle-down"></i> Retirada
+                        </a>
+                    </li>
+                    <!-- Relatórios -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/relatorios">
+                            <i class="fas fa-chart-line"></i> Relatórios
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <h2 class="text-center mb-4">Registro de Produto</h2>
-        <form>
+        <form action="/registerproduct" method="post">
             <div class="mb-3">
                 <label for="nomeItem" class="form-label">Nome do Item</label>
-                <input type="text" class="form-control" id="nomeItem" placeholder="Digite o nome do item" required>
+                <input type="text" class="form-control" id="nomeItem" name="nomeItem" placeholder="Digite o nome do item" required>
             </div>
             <div class="mb-3">
                 <label for="quantidade" class="form-label">Quantidade</label>
-                <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade" required>
+                <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Digite a quantidade" required>
             </div>
             <div class="mb-3">
                 <label for="unidadeMedida" class="form-label">Unidade de Medida</label>
-                <select class="form-select" id="unidadeMedida" required>
+                <select class="form-select" id="unidadeMedida" name="unidadeMedida" required>
                     <option value="litro">Litro</option>
                     <option value="unidade">Unidade</option>
                     <option value="kg">Kilograma</option>
@@ -63,7 +93,7 @@
             </div>
             <div class="mb-3">
                 <label for="local" class="form-label">Local</label>
-                <input type="text" class="form-control" id="local" placeholder="Digite o local" required>
+                <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block w-100">Registrar</button>
         </form>

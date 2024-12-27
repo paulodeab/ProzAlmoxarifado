@@ -1,13 +1,16 @@
 package route
 
 import (
+	"ProzAlmoxarifado/src/model"
 	"ProzAlmoxarifado/src/service"
 	"html/template"
 	"net/http"
 )
 
+var flag bool = false
+
 type TemplateName string
-type PageResponses struct{
+type PageResponses struct {
 	ErrorLogin string
 }
 
@@ -33,8 +36,22 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func RegisterProductHandler(w http.ResponseWriter, r *http.Request) {
+
+	if r.Method == http.MethodPost{
+		product := model.Product{
+			NomeItem: r.FormValue("nomeItem"),
+			Quantidade: r.FormValue("quantidade"),
+			UnidadeMedida: r.FormValue("unidadeMedida"),
+			Local: r.FormValue("local"),
+		}
+
+		service.InsertProduct(product);
+		
+	}
+
 	tmpl := GetTemplate(RegisterTemplate)
 	tmpl.Execute(w, nil)
+	
 }
 
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
