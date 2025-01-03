@@ -4,7 +4,6 @@ import (
 	"ProzAlmoxarifado/src/route"
 	"fmt"
 	"net/http"
-	
 )
 
 func main() {
@@ -12,5 +11,6 @@ func main() {
 	http.HandleFunc("/", route.LoginHandler)
 	http.HandleFunc("/index", route.IndexHandler)
 	http.HandleFunc("/registerproduct", route.RegisterProductHandler)
+	http.HandleFunc("/products", route.GetProductsHandler)
 	http.ListenAndServe(":8080", nil)
 }
